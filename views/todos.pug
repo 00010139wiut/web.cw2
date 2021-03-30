@@ -3,5 +3,6 @@ extends layout.pug
 block content 
     h1.todos-title All Tasks
     each todo in todos 
-        a.title-link(href="/todos/" + todo.id)= todo.title 
-        p.title-body= todo.body
+        .container-all
+            a.title-link(href="/todos/" + todo.id)= todo.title 
+            a.delete(href="/todos/" + todo.id) Delete 
