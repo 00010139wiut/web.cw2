@@ -1,0 +1,6 @@
+extends layout.pug 
+
+block content 
+    each todo in todos 
+        a(href="/todos/" + todo.id)= todo.title 
+        p= todo.body

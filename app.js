@@ -38,6 +38,26 @@ app.post('/create', (req, res) => {
     })
 })
 
+app.get('/todos', (req, res) => {
+    fs.readFile('./data/todos.json', (err, data) => {
+        if (err) throw err
+        
+        const todos = JSON.parse(data)
+        res.render('todos', {todos: todos})
+    })
+})
+
+app.get('/todos/:id', (req, res) => {
+    const id = req.params.id
+    fs.readFile('./data/todos.json', (err, data) => {
+        if (err) throw err
+        
+        const todos = JSON.parse(data)
+        const todo = todos.filter(todo => todo.id == id)[0]
+        res.render('todo', {todo: todo})
+    })
+})
+
 app.listen(8000,  err => {
     if(err) console.log(err)
 
