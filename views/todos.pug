@@ -1,6 +1,7 @@
 extends layout.pug 
 
 block content 
+    h1.todos-title All Tasks
     each todo in todos 
-        a(href="/todos/" + todo.id)= todo.title 
-        p= todo.body
+        a.title-link(href="/todos/" + todo.id)= todo.title 
+        p.title-body= todo.body

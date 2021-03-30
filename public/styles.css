@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: "New Tegomin", serif;
 }
+html {
+  overflow-x: hidden;
+}
 body {
   background: #0f0e17;
 }
@@ -60,4 +63,60 @@ main {
   background: #ff8906;
   border-radius: 10px;
   font-size: 30px;
+}
+
+form {
+  max-width: 40%;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  color: #fffffe;
+}
+
+label {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+input {
+  background: #0f0e17;
+  border: 1px solid #ff8906;
+  border-radius: 10px;
+  height: 40px;
+  color: #fffffe;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  background: #0f0e17;
+  border: 1px solid #ff8906;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  color: #fffffe;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+button {
+  color: #fffffe;
+  padding: 10px 30px 15px;
+  background: #ff8906;
+  border-radius: 10px;
+  font-size: 20px;
+  max-width: 10vw;
+  border: 1px solid #ff8906;
+  margin: auto;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0f0e17;
+  border: 1px solid #ff8906;
+  cursor: pointer;
 }
