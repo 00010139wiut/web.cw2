@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
+var validator = require('validator');
 
 const fs = require('fs')
+
 
 
 app.set('view engine', 'pug')
@@ -12,31 +14,9 @@ app.get('/', (req, res) => {
     res.render('home')
 })
 
-app.get('/create', (req, res) => {
-    res.render('create')
-})
-
-app.post('/create', (req, res) => {
-    const title = req.body.title
-    const body = req.body.body
-
-    fs.readFile('./data/todos.json', (err, data) => {
-        if (err) throw err
-
-        const todos = JSON.parse(data)
-
-        todos.push({
-            id: id(),
-            title: title,
-            body: body,
-        })
-
-        fs.writeFile('./data/todos.json', JSON.stringify(todos), err => {
-         if (err) throw err
-         res.redirect('/create')
-        })
-    })
-})
+//PASTE CREATE HERE
+const create = require('./routes/create.js')
+app.use('/create', create)
 
 app.get('/todos', (req, res) => {
     fs.readFile('./data/todos.json', (err, data) => {
@@ -58,6 +38,15 @@ app.get('/todos/:id', (req, res) => {
     })
 })
 
+app.get('/api/v1/todos', (req, res) => {
+    fs.readFile('./data/todos.json', (err, data) => {
+        if (err) throw err
+        
+        const todos = JSON.parse(data)
+        res.json(todos)
+    })
+})
+
 app.listen(8000,  err => {
     if(err) console.log(err)
 
@@ -65,6 +54,3 @@ app.listen(8000,  err => {
 })
 
 
-function id () {
-    return '_' + Math.random().toString(36).substr(2, 9);
-};

@@ -5,7 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
-    "pug": "^3.0.2"
+    "express-validator": "^6.10.0",
+    "pug": "^3.0.2",
+    "validator": "^13.5.2"
   },
   "devDependencies": {},
   "scripts": {

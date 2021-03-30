@@ -67,7 +67,7 @@ main {
 
 form {
   max-width: 40%;
-  margin: 100px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   color: #fffffe;
@@ -129,15 +129,13 @@ button:hover {
 }
 
 .container-all {
-  max-width: 80%;
+  max-width: 60%;
   margin: 100px auto;
   border: 1px solid #ff8906;
   padding: 30px 40px 30px;
   border-radius: 30px;
-  display: flex;
+  text-align: center;
   font-size: 30px;
-  justify-content: space-between;
-  align-items: center;
 }
 .container-all:hover {
   background: #272626;
@@ -145,21 +143,6 @@ button:hover {
 
 .title-link {
   color: #fffffe;
-}
-
-.delete {
-  color: #fffffe;
-  padding: 2px 30px 10px;
-  background: #ff8906;
-  border-radius: 10px;
-  transition: 0.3s;
-  border: 1px solid #ff8906;
-}
-
-.delete:hover {
-  background: #0f0e17;
-  border: 1px solid #ff8906;
-  cursor: pointer;
 }
 
 .container-todo {
@@ -176,4 +159,19 @@ button:hover {
 
 .body {
   font-size: 25px;
+}
+
+.error {
+  color: #fffffe;
+  text-align: center;
+  color: red;
+  font-size: 30px;
+  margin-top: 20px;
+}
+.success {
+  color: #fffffe;
+  text-align: center;
+  color: greenyellow;
+  font-size: 30px;
+  margin-top: 20px;
 }
