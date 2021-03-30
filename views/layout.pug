@@ -1,12 +1,13 @@
 doctype html
 html(lang="en")
     head
+        link(rel="stylesheet", href="/static/styles.css")
         title Document
     body 
         header 
-            a.logo(href="/") Logo 
+            a.logo(href="/") ToDo App 
         
-        nav 
-            a.nav-item(href="/todos") link 
-    
-    block content
+            nav 
+                a.nav-item(href="/todos") Todos 
+    main 
+        block content
